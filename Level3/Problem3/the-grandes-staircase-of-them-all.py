@@ -1,5 +1,6 @@
 from math import floor, sqrt
 
+# Buffer => Dynamic programming
 memo = [[None for k in range(20+1)] for n in range(200+1)]
 
 def q(n, k):
@@ -17,12 +18,3 @@ def q(n, k):
 def solution(n):
     maxS = floor(((8*n+1)**.5 -1)/2)
     return sum(q(n,k) for k in range(int(maxS + 1)))-1
-
-
-def main():
-    n = 2000
-    print([solution(n) for n in range(1,n)])
-
-
-if __name__ == "__main__":
-    main()

@@ -4,12 +4,11 @@ def le_bombs(a, b, n):
     """
     n_times = a/b - 1
     if n_times == 0:
-        a -= b
-        n += 1
+        # a is less than twice b
+        return a-b, b, n+1
     else:
-        a -= b*n_times
-        n += n_times
-    return a, b, n
+        # a is twice or more b
+        return a-b*n_times, b, n+n_times
 
 def get_cycles(x, y, n = 0):
     """
@@ -24,6 +23,3 @@ def solution(x, y):
     if x < 1 or x > 10**50 or y < 1 or y > 10**50 or x == y:
         return "impossible"
     return str(get_cycles(x, y))
-
-print(solution('2', '1'))
-print(solution('4', '7'))

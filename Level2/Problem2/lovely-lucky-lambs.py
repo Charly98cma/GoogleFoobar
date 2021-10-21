@@ -20,15 +20,14 @@ def generous(n):
     Sequence of power 2 numbers until all LAMBs
     are assigned.
 
-    Special case: the remaining LAMBs are less that
+    Special case: the remaining LAMBs are less than
     the next power of 2, but greater that the sum of
     the pay of the two last subordinates.
     """
     sum_seq = 1
     seq = []
     for i in count():
-        if sum_seq > n:
-            break
+        if sum_seq > n: break
         seq.append(sum_seq)
         sum_seq <<= 1
     seq = seq[:-1]
@@ -36,6 +35,5 @@ def generous(n):
 
 
 def solution(total_lambs):
-    if total_lambs < 2 or total_lambs >= 10**9:
-        return 0
+    if total_lambs < 2 or total_lambs >= 10**9: return 0
     return stingy(total_lambs) - generous(total_lambs)

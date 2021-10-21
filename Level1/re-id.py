@@ -4,11 +4,9 @@ def solution(n):
     # Generate prime sequence
     for x in range(2, 1000000):
         for y in range(2, x):
-            if x % y == 0: break
+            if x % y == 0: break  # Not prime
         else:
-            prime_seq += str(x)
-            # Return if found sequence
+            prime_seq += str(x)  # Found prime
+        # Return when found sequence
         if len(prime_seq) >= res_len:
             return prime_seq[n:res_len]
-
-print(solution(300))
