@@ -2,7 +2,7 @@ def solution(n):
     res_len = n + 5
     prime_seq = ""
     # Generate prime sequence
-    for x in range(2, 1000000):
+    for x in range(2, 30000):
         for y in range(2, x):
             if x % y == 0: break  # Not prime
         else:
